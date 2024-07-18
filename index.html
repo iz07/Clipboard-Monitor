@@ -8,11 +8,16 @@
 	</head>
 	<body>
 		<h1>Clipboard Monitor</h1>
-		<div>
-			Status:<span id="status">Inactive</span>
+		<div class="container">
+			<div>
+				Status:<span id="status">Inactive</span>
+			</div>
+      <div class="button-container">
+        <button id="toggle-btn">Toggle</button>
+        <button id="clear-btn">Clear All</button>
+      </div>
+			<div id="clipboard-container"></div>
 		</div>
-		<button id="toggle-btn">Toggle</button>
-		<div id="clipboard-container"></div>
 		<script src="./script.js"></script>
 	</body>
 </html>

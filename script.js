@@ -1,5 +1,6 @@
 const clipboardContainer = document.getElementById("clipboard-container");
 const toggleBtn = document.getElementById("toggle-btn");
+const clearBtn = document.getElementById("clear-btn");
 const status = document.getElementById("status");
 
 let mostRecentClipboard = "";
@@ -27,6 +28,14 @@ const onToggleBtnClick = () => {
   status.textContent = toggle ? "Active" : "Inactive";
 }
 
-toggleBtn.addEventListener("click", onToggleBtnClick)
+const onClearBtnClick = () => {
+  const clearConfirm = window.confirm("Do you want to clear all clipboard history?");
+  if(clearConfirm) {
+    clipboardContainer.innerHTML = "";
+  }
+}
+
+toggleBtn.addEventListener("click", onToggleBtnClick);
+clearBtn.addEventListener("click", onClearBtnClick);
 
 setInterval(getClipboardContents, 1000);
